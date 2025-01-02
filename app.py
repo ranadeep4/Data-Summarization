@@ -7,40 +7,11 @@ app = Flask(__name__)
 def home():
     
     return render_template('index.html')
-# @app.route('/Summarize',methods = ['GET', 'POST'])
-# def Summarize():
-#     if request.method == 'POST':
-#         API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
-#         headers = {"Authorization": "Bearer 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"}
-
-#         data =request.form['text']
-    
-#         maxL = request.form['maxL']
-#         minL = int(maxL)//5
-
-#         def query(payload):
-#             response = requests.post(API_URL, headers=headers, json=payload)
-#             return response.json()
-            
-#         output = query({
-#             "inputs": data,
-#             "parameters": {
-#                 "min_length": int(minL),
-#                 "max_length": int(maxL)
-#             } , # Optional parameters, you can add more as per your requirements  
-#         })
-#         return render_template('index.html', result=output)
-#     else:
-#         return render_template('index.html')
-
-
-
-
 @app.route('/Summarize', methods=['GET', 'POST'])
 def Summarize():
     if request.method == 'POST':
         API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
-        headers = {"Authorization": "Bearer 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"}
+        headers = {"Authorization": "Bearer hf_xxxxxxxxxxxxxxxxxxxxxxxxxxx"}
 
         # Get input data from the form
         data = request.form['text']
